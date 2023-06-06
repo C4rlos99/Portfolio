@@ -136,35 +136,49 @@ section {
   display: grid;
   gap: 40px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 160px 160px;
 }
 
-.social-media-container,
-.item-gmail {
+.social-media-cell {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  perspective: 700px;
+}
+
+.social-media-card {
   background-color: #ffffffee;
   color: #020205;
   text-decoration: none;
   width: 100%;
-  height: 100px;
-  max-width: 300px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  transition: transform 0.2s;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
 
-.social-media-container:hover,
-.item-gmail {
+.social-media-cell:hover > .social-media-card {
   transform: rotateY(180deg);
 }
 
-.item-gmail {
+.social-media-item-gmail {
   grid-column: 1 / 3;
 }
 
-.social-media-container > p {
-  display: none;
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  font-weight: 500px;
+  font-size: 20px;
+  transform: rotateY(180deg);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -183,8 +197,7 @@ section {
     flex-direction: column;
   }
 
-  .social-media-container,
-  .item-gmail {
+  .social-media-cell {
     max-width: 100%;
   }
 }
