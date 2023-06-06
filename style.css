@@ -43,9 +43,9 @@ footer {
   background-color: #020205;
 }
 
-header > p {
+header > h1 {
   font-size: 35px;
-  font-weight: 500px;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
@@ -114,26 +114,21 @@ section {
   width: 100px;
 }
 
-.skills-grid {
-  display: block;
+.grid {
   margin-left: auto;
   margin-right: auto;
   justify-items: center;
   align-items: center;
   padding: 20px 0px;
   display: grid;
+}
+
+.grid--type-skils {
   gap: 20px;
   grid-template-columns: repeat(6, 1fr);
 }
 
-.social-media-grid {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  justify-items: center;
-  align-items: center;
-  padding: 20px 0px;
-  display: grid;
+.grid--type-social-media {
   gap: 40px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 160px 160px;
@@ -176,25 +171,46 @@ section {
 }
 
 .back {
-  font-weight: 500px;
+  font-weight: bold;
   font-size: 20px;
   transform: rotateY(180deg);
 }
 
+#hobbies > ul {
+  text-align: left;
+  margin: 30px 150px;
+}
+
+#hobbies > ul > li {
+  margin-top: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
-  .skills-grid {
+  .grid--type-skils {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  #hobbies > ul {
+    margin: 30px 60px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .skills-grid {
+  .grid--type-skils {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .social-media-grid {
-    display: flex;
-    flex-direction: column;
+  .grid--type-social-media {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 160px 160px 160px;
+  }
+
+  .social-media-item-gmail {
+    grid-column: 1;
+  }
+
+  #hobbies > ul {
+    margin: 30px 15px;
   }
 
   .social-media-cell {
